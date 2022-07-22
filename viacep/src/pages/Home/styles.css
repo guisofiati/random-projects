@@ -1,0 +1,55 @@
+.container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    font-size: 50px;
+}
+
+.container abbr {
+    text-decoration: none;
+}
+
+.container p {
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.container label {
+    font-weight: 500;
+}
+
+.container label::after {
+    content: ":";
+}
+
+.container input {
+    width: 50%;
+    padding: 20px;
+    margin: 20px 5px;
+    background-color: #e6e6e6;
+    border-style: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.container button {
+    width: 50%;
+    padding: 24px;
+    margin: 5px 0 50px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    transition-property: filter;
+    transition-duration: 0.2s;
+}
+
+.container button:hover {
+    filter: brightness(0.9);
+}
