@@ -12,11 +12,21 @@
     border-radius: 15px;
     /*box-shadow: 3px 3px 1em gold; sombra nas bordas */
     background-color: #fff;
+
+    transition: filter 0.5s;
+}
+
+.card:hover {
+    filter: drop-shadow(0 0 0.9rem gold);
 }
 
 .repo-title {
     font-size: 27px;
     padding-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .repo-description {
@@ -27,8 +37,19 @@
     overflow: hidden;
     text-overflow: ellipsis; /* adiciona um ... quando o texto e grande */
     white-space: nowrap;
+    font-style: italic;
 }
 
+a {
+    text-decoration: none;
+}
+
+header {
+    height: 180px;
+}
+
+/* flex sozinho é o flex grow, que completa os espaços vazios do container */
+/* header ocupara tudo, menos o content da section */
 main {
     display: flex;
     align-items: center;
@@ -44,10 +65,4 @@ main div {
     display: flex;
     align-items: center;
     gap: 3px; /* espaço entre a img e os labels */
-}
-
-/* flex sozinho é o flex grow, que completa os espaços vazios do container */
-/* header ocupara tudo, menos o content da section */
-header {
-    height: 180px;
 }

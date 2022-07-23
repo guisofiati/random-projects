@@ -26,10 +26,10 @@ export function Home() {
     }, []);
 
     function formatData(date) {
-        return new Date(date).toLocaleDateString("pt-br", {
+        return new Date(date).toLocaleDateString("pt-BR", {
             day: "2-digit",
             month: "2-digit",
-            year: "2-digit",
+            year: "numeric", // 4 digits
         });
     }
 
@@ -38,16 +38,20 @@ export function Home() {
             <div className="container">
                 <h1 className="title">My projects from GitHub</h1>
                 <p className="description">
-                    Total repos: <strong>{totalRepos}</strong>
+                    Total repos:<strong>{totalRepos}</strong>
                 </p>
                 {repo.map((repo) => (
                     <Card
                         key={repo.id}
                         title={repo.name}
-                        description={repo.description}
+                        description={
+                            repo.description ||
+                            "Repository without description 💔"
+                        }
                         created_at={formatData(repo.created_at)}
-                        language={repo.language}
+                        language={repo.language || "Not recognized"}
                         stars={repo.stargazers_count}
+                        link={repo.html_url}
                     />
                 ))}
             </div>
