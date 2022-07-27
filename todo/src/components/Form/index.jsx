@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./styles.css";
 
-export function Form() {
+export function Form({ addTodo }) {
     /*
     - event.target.value = pegar oque esta no input
     - onClick(() = console.log(task)). vai aparecer e sumir pois o form atualiza a pagina, (se n tiver onsubmit)
@@ -10,10 +10,20 @@ export function Form() {
     */
 
     const [task, setTask] = useState("");
+    const [id, setId] = useState(1);
 
     function handleSubmitForm(e) {
         e.preventDefault();
     }
+
+    const todoCreate = (text) => {
+        const todoObj = {
+            text: text,
+            id: id,
+        };
+        setId(id + 1);
+        addTodo(todoObj);
+    };
 
     return (
         <>
@@ -30,7 +40,7 @@ export function Form() {
                         required
                         onChange={(event) => setTask(event.target.value)}
                     />
-                    <button type="submit" onClick={() => console.log(task)}>
+                    <button type="submit" onClick={() => todoCreate(task)}>
                         Add
                     </button>
                 </form>
