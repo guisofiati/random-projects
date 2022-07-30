@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
 
-export function Form(props) {
+export function Form({ onFormSubmit }) {
     const [input, setInput] = useState("");
     const [id, setId] = useState(1);
 
@@ -12,12 +12,13 @@ export function Form(props) {
     const handleOnSubmit = (e) => {
         e.preventDefault();
 
-        //a prop é uma funcao
-        props.onFormSubmit({
+        const todoObj = {
             id: id,
             text: input,
-        });
+        };
 
+        //props.onFormSubmit(todoObj);
+        onFormSubmit(todoObj); // props recebe um obj
         setId(id + 1);
         setInput("");
     };
