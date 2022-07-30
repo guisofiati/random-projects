@@ -14,6 +14,12 @@ export function Home() {
         setTodos([...todos, todo]);
     };
 
+    const removeTodo = (id) => {
+        const itemsRemaining = todos.filter((todo) => todo.id !== id);
+        setTodos(itemsRemaining);
+        console.log(itemsRemaining);
+    };
+
     return (
         <>
             <div className="container">
@@ -22,7 +28,7 @@ export function Home() {
                 <ol>
                     {todos.map((task) => (
                         <li key={task.id}>
-                            <ListItem todo={task} />
+                            <ListItem todo={task} removeItem={removeTodo} />
                         </li>
                     ))}
                 </ol>
