@@ -6,8 +6,33 @@
     align-items: center;
 }
 
-form {
+.form form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.form input,
+.form button {
+    height: 55px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form button {
+    transition: filter 0.3s;
+}
+
+.form button:hover {
+    filter: brightness(0.9);
+}
+
+.form button {
+    background-color: #9400d3;
+    color: #fff;
+}
+
+.form input {
+    padding-left: 10px;
+    background-color: #e3e3e3;
 }
