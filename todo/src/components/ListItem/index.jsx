@@ -1,21 +1,17 @@
-import DeleteIconSVG from "../../assets/svg/DeleteIcon.svg";
-
 import "./styles.css";
 
-export function ListItem({ todo, deleteTodo }) {
+import DeleteIconSVG from "../../assets/svg/DeleteIcon.svg";
+
+export function ListItem({ todo }) {
     return (
         <>
             <div className="item">
-                <h1 className="item-title">{todo.text}</h1>
-                <button
-                    type="button"
-                    className="item-button"
-                    onClick={() => deleteTodo(todo.id)}
-                >
+                <h1>{todo.text}</h1>
+                <button type="button">
                     <img
                         src={DeleteIconSVG}
                         alt="Trash icon"
-                        title="Remove this task"
+                        title="Remove this item"
                     />
                 </button>
             </div>
